@@ -160,12 +160,13 @@ public class Login_Jfrm extends JFrame {
         frmLoginPanel.getContentPane().add(tglbtnNewToggleButton);
 
         JLabel lblNotRegisterYet = new JLabel("sudah Punya akun ? ");
-        lblNotRegisterYet.setFont(new Font("Tahoma", Font.PLAIN, 9));
-        lblNotRegisterYet.setBounds(124, 236, 94, 14);
+        lblNotRegisterYet.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNotRegisterYet.setBounds(124, 236, 150, 20);
         frmLoginPanel.getContentPane().add(lblNotRegisterYet);
-
+        
         JLabel lblRegisterHere = new JLabel("Daftar dulu sini !!!");
         lblRegisterHere.setForeground(new Color(0, 51, 153));
+        lblNotRegisterYet.setBounds(124, 236, 150, 20);
         lblRegisterHere.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
@@ -175,18 +176,18 @@ public class Login_Jfrm extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent arg0) {
-                lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 11));
+                lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
                 lblRegisterHere.setForeground(new Color(0, 51, 204));
             }
 
             @Override
             public void mouseExited(MouseEvent arg0) {
-                lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 10));
+                lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
                 lblRegisterHere.setForeground(new Color(0, 51, 153));
             }
         });
         lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 10));
-        lblRegisterHere.setBounds(211, 236, 82, 14);
+        lblRegisterHere.setBounds(294, 236, 120, 20); // Meningkatkan nilai x untuk menambah jarak
         frmLoginPanel.getContentPane().add(lblRegisterHere);
 
     }
