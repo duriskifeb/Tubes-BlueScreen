@@ -20,27 +20,24 @@ import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 
 public class LOG_Splash {
-	
-public static void main(String[] args) throws InterruptedException {
-		
 
+	public static void main(String[] args) throws InterruptedException {
 
-		//java.net.URL imgURL = 
-		JSplash j=new JSplash(LOG_Splash.class.getResource("/resource/splash.png"), true, true, true, "RF's Programme",null, Color.BLACK,new Color(6,6,31));
+		// java.net.URL imgURL =
+		JSplash j = new JSplash(LOG_Splash.class.getResource("/resource/Frame 1 (1).png"), true, true, true,
+				"RF's Programme", null, Color.BLACK, new Color(6, 6, 31));
 
 		j.splashOn();
-		
-		for(int i=0;i<100;i++){
+
+		for (int i = 0; i < 100; i++) {
 			j.setProgress(i, "");
 			Thread.sleep(50);
 		}
-		
+
 		j.splashOff();
-		Login_Jfrm log=new Login_Jfrm();
+		Login_Jfrm log = new Login_Jfrm();
 		log.main(null);
 
-	
 	}
-
 
 }
