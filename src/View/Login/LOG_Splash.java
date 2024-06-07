@@ -25,7 +25,7 @@ public class LOG_Splash {
 
 		// java.net.URL imgURL =
 		JSplash j = new JSplash(LOG_Splash.class.getResource("/resource/Frame 1 (1).png"), true, true, true,
-				"RF's Programme", null, Color.BLACK, new Color(6, 6, 31));
+				"By : Pendekar_Bluecreen", null, Color.BLACK, new Color(6, 6, 31));
 
 		j.splashOn();
 
