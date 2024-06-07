@@ -78,7 +78,7 @@ public class Products {
 	}
 	
 	public static void load(){
-		Connection is=Database.getconnection();
+		Connection is = Database.getconnection();
 		
 		String command="SELECT a.Name as Product,b.Name as Category,c.Name as Unit,(CASE a.status WHEN 1 THEN 'Enable' ELSE 'Disable' END) as StatUs from products a,product_catagory b,unit c WHERE a.unit_id=c.id AND a.Catagory_id=b.id";
 		
@@ -147,7 +147,7 @@ public static int get_pd_id(String give_pd_name){
 }
 
 public static void delete_product(int id_no){
-	Connection is=Database.getconnection();
+	Connection is = Database.getconnection();
 	
 	String command="DELETE FROM `products` WHERE id=?";
 	
