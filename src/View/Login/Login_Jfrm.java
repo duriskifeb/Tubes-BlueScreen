@@ -163,7 +163,7 @@ public class Login_Jfrm extends JFrame {
         lblNotRegisterYet.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lblNotRegisterYet.setBounds(124, 236, 150, 20);
         frmLoginPanel.getContentPane().add(lblNotRegisterYet);
-        
+
         JLabel lblRegisterHere = new JLabel("Daftar dulu sini !!!");
         lblRegisterHere.setForeground(new Color(0, 51, 153));
         lblNotRegisterYet.setBounds(124, 236, 150, 20);
@@ -174,20 +174,20 @@ public class Login_Jfrm extends JFrame {
                 Login_REG.main(null);
             }
 
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
-                lblRegisterHere.setForeground(new Color(0, 51, 204));
-            }
+            // @Override
+            // public void mouseEntered(MouseEvent arg0) {
+            //     lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
+            //     lblRegisterHere.setForeground(new Color(0, 51, 204));
+            // }
 
-            @Override
-            public void mouseExited(MouseEvent arg0) {
-                lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
-                lblRegisterHere.setForeground(new Color(0, 51, 153));
-            }
+            // @Override
+            // public void mouseExited(MouseEvent arg0) {
+            //     lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
+            //     lblRegisterHere.setForeground(new Color(0, 51, 153));
+            // }
         });
-        lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 10));
-        lblRegisterHere.setBounds(294, 236, 120, 20); // Meningkatkan nilai x untuk menambah jarak
+        lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblRegisterHere.setBounds(295, 236, 150, 20); // Meningkatkan nilai x untuk menambah jarak
         frmLoginPanel.getContentPane().add(lblRegisterHere);
 
     }

@@ -1,43 +1,48 @@
 package View.Login;
 
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.PageAttributes.ColorType;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import javax.swing.ImageIcon;
-import javax.swing.plaf.ColorChooserUI;
-
-import com.thehowtotutorial.splashscreen.JSplash;
-
-import View.Dashboard_JFrm;
-
-import java.awt.Cursor;
-import java.awt.Rectangle;
-import java.awt.ComponentOrientation;
-import java.awt.Dimension;
+import javax.swing.JProgressBar;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JWindow;
+import java.awt.BorderLayout;
 
 public class LOG_Splash {
 
 	public static void main(String[] args) throws InterruptedException {
+		// Membuat splash screen kustom menggunakan JWindow
+		JWindow splash = new JWindow();
 
-		// java.net.URL imgURL =
-		JSplash j = new JSplash(LOG_Splash.class.getResource("/resource/Frame 1 (1).png"), true, true, true,
-				"By : Pendekar_Bluecreen", null, Color.BLACK, new Color(6, 6, 31));
+		// Panel untuk konten splash screen
+		JPanel content = new JPanel(new BorderLayout());
 
-		j.splashOn();
+		// Gambar splash
+		JLabel splashLabel = new JLabel(new ImageIcon(LOG_Splash.class.getResource("/resource/Frame 1 (1).png")));
+		content.add(splashLabel, BorderLayout.CENTER);
 
-		for (int i = 0; i < 100; i++) {
-			j.setProgress(i, "");
-			Thread.sleep(50);
+		// Progress bar
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setForeground(Color.GREEN); // Warna progress bar
+		progressBar.setStringPainted(true);
+		content.add(progressBar, BorderLayout.SOUTH);
+
+		splash.setContentPane(content);
+		splash.pack();
+		splash.setLocationRelativeTo(null);
+		splash.setVisible(true);
+
+		// Simulasi proses loading
+		for (int i = 0; i <= 100; i++) {
+			progressBar.setValue(i);
+			Thread.sleep(50); // Simulasi waktu loading
 		}
 
-		j.splashOff();
+		splash.setVisible(false);
+		splash.dispose();
+
+		// Tampilkan aplikasi utama (misal JFrame)
 		Login_Jfrm log = new Login_Jfrm();
 		log.main(null);
-
 	}
-
 }

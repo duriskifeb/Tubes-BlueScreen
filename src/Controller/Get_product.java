@@ -28,10 +28,6 @@ public class Get_product {
 		p.prepare_for_send_product(nme, cat_id, unit_id, status);
 		
 		p.snd_to_db_product();
-		
-		
-		
-		
 	}
 
 }
