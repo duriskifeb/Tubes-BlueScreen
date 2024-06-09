@@ -18,8 +18,10 @@ public class LOG_Splash {
 		JPanel content = new JPanel(new BorderLayout());
 
 		// Gambar splash
-		JLabel splashLabel = new JLabel(new ImageIcon(LOG_Splash.class.getResource("/resource/Frame 1 (1).png")));
+		JLabel splashLabel = new JLabel(new ImageIcon(LOG_Splash.class.getResource("/resource/landingpage.png")));
+		splash.setBounds(480, 250, 625, 350);
 		content.add(splashLabel, BorderLayout.CENTER);
+		
 
 		// Progress bar
 		JProgressBar progressBar = new JProgressBar();

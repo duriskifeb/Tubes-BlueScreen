@@ -10,10 +10,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-//import com.seaglasslookandfeel.SeaGlassLookAndFeel;
-//import de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel;
-//import napkin.NapkinLookAndFeel;
-
 public class Login_Jfrm extends JFrame {
 
     public static JFrame frmLoginPanel;
@@ -55,18 +51,28 @@ public class Login_Jfrm extends JFrame {
     private void initialize() {
 
         frmLoginPanel = new JFrame();
-        setSize(600, 400);
+        frmLoginPanel.setSize(889, 602); // Set ukuran menjadi 889x602
         frmLoginPanel.setType(Type.POPUP);
-        frmLoginPanel.setTitle("Welcome, Traveliki");
-        frmLoginPanel.setBounds(480, 250, 500, 350);
+        frmLoginPanel.setTitle("Welcome, Traveliki🦇");
+        frmLoginPanel.setBounds(480, 250, 889, 602); // Set ukuran menjadi 889x602
         frmLoginPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frmLoginPanel.getContentPane().setLayout(null);
+        frmLoginPanel.getContentPane().setBackground(Color.orange);
+
+        // JLabel lblteks = new JLabel(
+        //         "<html><center><font face='Poppins' color='white' size='6'><b>Selamat Datang di Aplikasi Traveliki🦇<br/>Kapanpun dan dimanapun bisa sakniki<br/>harga murah asal uang nya ada</b></font></center></html>");
+        // lblteks.setBounds(50, 20, 600, 80); // Perbesar bounds agar teks sesuai
+        // frmLoginPanel.getContentPane().add(lblteks);
+
+        // user = new JTextField();
+
+        // tambahkan image
 
         JLabel lblLogin = new JLabel("Login");
         lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
         frmLoginPanel.getContentPane().add(lblLogin, BorderLayout.CENTER);
 
-        frmLoginPanel.setVisible(true);
+        // frmLoginPanel.setVisible(true);
 
         JPanel panel = new JPanel();
         panel.setBackground(new Color(6, 6, 31));
@@ -74,23 +80,25 @@ public class Login_Jfrm extends JFrame {
 
         add(panel);
 
+        JLabel lblUsername = new JLabel("Username : ");
+        lblUsername.setFont(new Font("Poppins", Font.BOLD, 16)); // Perbesar teks
+        lblUsername.setBounds(41, 90, 120, 30); // Sesuaikan bounds agar lebih besar
+        frmLoginPanel.getContentPane().add(lblUsername);
+
         user = new JTextField();
-        user.setBounds(124, 74, 207, 20);
+        user.setBounds(180, 90, 250, 30); // Perbesar ukuran dan sesuaikan posisi
         frmLoginPanel.getContentPane().add(user);
         user.setColumns(10);
 
-        JLabel lblUsername = new JLabel("Username : ");
-        lblUsername.setBounds(41, 77, 67, 14);
-        frmLoginPanel.getContentPane().add(lblUsername);
 
         JLabel lblPassword = new JLabel("Password : ");
-        lblPassword.setBounds(41, 113, 67, 14);
+        lblPassword.setFont(new Font("Poppins", Font.BOLD, 16)); // Perbesar teks
+        lblPassword.setBounds(41, 140, 120, 30); // Tempatkan di bawah Username
         frmLoginPanel.getContentPane().add(lblPassword);
 
         passw = new JPasswordField();
-
         passw.setColumns(10);
-        passw.setBounds(124, 110, 207, 20);
+        passw.setBounds(180, 140, 250, 30); // Tempatkan di bawah Username
         frmLoginPanel.getContentPane().add(passw);
 
         // btnLogin
@@ -107,7 +115,7 @@ public class Login_Jfrm extends JFrame {
                 }
             }
         });
-        btnLogin.setBounds(124, 198, 89, 23);
+        btnLogin.setBounds(124, 198, 89, 25);
         frmLoginPanel.getContentPane().add(btnLogin);
 
         // btnReset
@@ -121,7 +129,7 @@ public class Login_Jfrm extends JFrame {
             }
         });
 
-        btnReset.setBounds(223, 198, 89, 23); // Mengatur posisi tombol reset
+        btnReset.setBounds(250, 198, 89, 25); // Mengatur posisi tombol reset
         frmLoginPanel.getContentPane().add(btnReset);
 
         rol = new JComboBox();
@@ -140,7 +148,7 @@ public class Login_Jfrm extends JFrame {
         // Icon untuk field Username
         JLabel lblUsernameIcon = new JLabel();
         lblUsernameIcon.setIcon(new ImageIcon(Login_Jfrm.class.getResource("/resource/Vector.png")));
-        lblUsernameIcon.setBounds(341, 77, 18, 14); // Sesuaikan posisinya
+        lblUsernameIcon.setBounds(440, 90, 30, 30); // Sesuaikan posisinya
         frmLoginPanel.getContentPane().add(lblUsernameIcon);
 
         // icon password
@@ -156,7 +164,7 @@ public class Login_Jfrm extends JFrame {
             }
         });
 
-        tglbtnNewToggleButton.setBounds(341, 113, 18, 14);
+        tglbtnNewToggleButton.setBounds(341, 135, 18, 14);
         frmLoginPanel.getContentPane().add(tglbtnNewToggleButton);
 
         JLabel lblNotRegisterYet = new JLabel("sudah Punya akun ? ");
@@ -174,21 +182,14 @@ public class Login_Jfrm extends JFrame {
                 Login_REG.main(null);
             }
 
-            // @Override
-            // public void mouseEntered(MouseEvent arg0) {
-            //     lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
-            //     lblRegisterHere.setForeground(new Color(0, 51, 204));
-            // }
-
-            // @Override
-            // public void mouseExited(MouseEvent arg0) {
-            //     lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
-            //     lblRegisterHere.setForeground(new Color(0, 51, 153));
-            // }
         });
         lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lblRegisterHere.setBounds(295, 236, 150, 20); // Meningkatkan nilai x untuk menambah jarak
         frmLoginPanel.getContentPane().add(lblRegisterHere);
+
+        JLabel lblImageBottom2 = new JLabel(new ImageIcon(Login_Jfrm.class.getResource("/resource/All.png")));
+        lblImageBottom2.setBounds(0, 0, 889, 602); // Atur ukuran dan posisi sesuai kebutuhan
+        frmLoginPanel.getContentPane().add(lblImageBottom2);
 
     }
 }

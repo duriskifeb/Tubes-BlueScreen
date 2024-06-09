@@ -48,9 +48,9 @@ public class Login_Admin {
 	}
 	
 	public void admin_data_insert(){
-		Connection obj=Database.getconnection();
+		Connection obj = Database.getconnection();
 		
-		String comnd="INSERT INTO `login_admin`(`username`, `password`, `role`) VALUES (?,?,?)";
+		String comnd = "INSERT INTO `login_admin`(`username`, `password`, `role`) VALUES (?,?,?)";
 		
 		try{
 			PreparedStatement ps=obj.prepareStatement(comnd);

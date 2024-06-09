@@ -29,20 +29,15 @@ public class Login_cntrl {
 				Dashboard_JFrm.setVisible(true);
 				
 				Login_Jfrm.frmLoginPanel.dispose();
-				
 
-				
-				
-				
-				
 			}
 			
 		}
 		
 		//MAnager
 		if(rol.equals("Manager")){
-			Login_Manager Login_m=new Login_Manager();
-			String result=Login_m.mngr_data_chek(un, ps,rol);
+			Login_Manager Login_m = new Login_Manager();
+			String result = Login_m.mngr_data_chek(un, ps,rol);
 			
 			if(result==null){
 				System.out.println("No Manger");
@@ -75,9 +70,6 @@ public class Login_cntrl {
 				Login_Jfrm.frmLoginPanel.dispose();
 			}
 		}
-		
-		
-		
 		
 	}
 

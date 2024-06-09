@@ -71,13 +71,10 @@ public class Login_REG {
 	private void initialize() {
 		LOG_Splash obj=new LOG_Splash();
 		
-		
- 
-		
 		frmLoginPanel = new JFrame();
 		frmLoginPanel.setType(Type.POPUP);
 		frmLoginPanel.setTitle("Account Registration");
-		frmLoginPanel.setBounds(490, 250, 450, 300);
+		frmLoginPanel.setBounds(480, 250, 500, 350);
 		frmLoginPanel.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frmLoginPanel.getContentPane().setLayout(null);
 		
@@ -86,18 +83,16 @@ public class Login_REG {
 		frmLoginPanel.getContentPane().add(lblLogin);
 		
 		user = new JTextField();
-		
-		
-		
+	
 		user.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent arg0) {
-				String usr=user.getText();
-				String ad=Login_Admin.username_exist_admin(usr);
-				String em=Login_Employee.username_exist_emp(usr);
-				String mng=Login_Manager.username_exist_mngr(usr);
+				String usr = user.getText();
+				String ad = Login_Admin.username_exist_admin(usr);
+				String em = Login_Employee.username_exist_emp(usr);
+				String mng = Login_Manager.username_exist_mngr(usr);
 				
-				if(ad==null&&em==null&&mng==null){
+				if(ad == null && em == null && mng == null){
 					user.setBorder(null);
 					//user.setBorder(new EmptyBorder(0, 0, 0, 0));
 					user_lbl.setVisible(false);
@@ -114,11 +109,11 @@ public class Login_REG {
 		frmLoginPanel.getContentPane().add(user);
 		user.setColumns(10);
 		
-		JLabel lblUsername = new JLabel("Username ::");
+		JLabel lblUsername = new JLabel("Username : ");
 		lblUsername.setBounds(41, 77, 67, 14);
 		frmLoginPanel.getContentPane().add(lblUsername);
 		
-		JLabel lblPassword = new JLabel("Password ::");
+		JLabel lblPassword = new JLabel("Password : ");
 		lblPassword.setBounds(41, 113, 67, 14);
 		frmLoginPanel.getContentPane().add(lblPassword);
 		
@@ -128,16 +123,18 @@ public class Login_REG {
 		passw.setBounds(124, 110, 207, 20);
 		frmLoginPanel.getContentPane().add(passw);
 		
+		//btn
 		btnLogin = new JButton("Register\r\n");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				if(rol.getSelectedItem().toString().equals("Select")){
 					JOptionPane.showMessageDialog(null, "Select Your Role");
 				}
 				else{
-					String un=user.getText();
-					String ps=passw.getText();
-					String role=rol.getSelectedItem().toString();
+					String un = user.getText();
+					String ps = passw.getText();
+					String role = rol.getSelectedItem().toString();
 					new Login_REG_ctrl(un,ps,role);
 					JOptionPane.showMessageDialog(null, "Registration Successfull");
 				}
@@ -146,6 +143,21 @@ public class Login_REG {
 		});
 		btnLogin.setBounds(124, 198, 89, 23);
 		frmLoginPanel.getContentPane().add(btnLogin);
+
+		//Btn Reset
+		// btnReset
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// Membersihkan field input
+				user.setText("");
+				passw.setText("");
+				rol.setSelectedIndex(0); // Mengatur combo box ke pilihan default
+			}
+		});
+
+		btnReset.setBounds(223, 198, 89, 23); // Mengatur posisi tombol reset
+		frmLoginPanel.getContentPane().add(btnReset);
 		
 		rol = new JComboBox();
 		rol.setModel(new DefaultComboBoxModel(new String[] {"Select", "Employee", "Manager", "Admin", "Super_Admin"}));
@@ -156,7 +168,7 @@ public class Login_REG {
 		lblRole.setBounds(41, 148, 42, 14);
 		frmLoginPanel.getContentPane().add(lblRole);
 		
-		user_lbl = new JLabel("Username Already Exist !!!");
+		user_lbl = new JLabel("Username Already Exist !!!");	
 		user_lbl.setForeground(new Color(255, 0, 0));
 		user_lbl.setVisible(false);
 		user_lbl.setBounds(124, 96, 207, 14);
