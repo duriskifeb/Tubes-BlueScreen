@@ -17,10 +17,9 @@ public class Login_cntrl {
 			Login_Employee Login_m=new Login_Employee();
 			String result=Login_m.emp_data_chek(un, ps,rol);
 			
-			if(result==null){
+			if(result == null){
 				System.out.println("No Employee");
 				JOptionPane.showMessageDialog(null, "Login Failed");
-				
 			}
 			else{
 				

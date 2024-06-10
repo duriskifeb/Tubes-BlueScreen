@@ -29,6 +29,7 @@ public class Login_REG_ctrl {
 			Login_Admin Login_m = new Login_Admin();
 			Login_m.prepare_admin_data(un, ps, rol);
 			Login_m.admin_data_insert();
+			//
 
 		}
 
