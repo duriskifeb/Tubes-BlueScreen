@@ -10,6 +10,7 @@ public class Login_Admin {
 	private String rl;
 	
 	public static String admin_data_chek(String give_username,String give_password, String give_rol){
+		
 		Connection obj=Database.getconnection();
 		
 		String comnd="SELECT `username`, `password` FROM `login_admin` WHERE username=? AND password=? AND role=?";
@@ -66,9 +67,9 @@ public class Login_Admin {
 	}
 	
 	public static String username_exist_admin(String give_username){
-		Connection obj=Database.getconnection();
+		Connection obj = Database.getconnection();
 		
-		String comnd="SELECT username FROM login_admin WHERE username=?";
+		String comnd = "SELECT username FROM login_admin WHERE username=?";
 		
 		String user = null;
 

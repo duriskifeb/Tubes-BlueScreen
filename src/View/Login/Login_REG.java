@@ -100,6 +100,7 @@ public class Login_REG {
 		// Register button
 		JButton btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent arg0) {
 				if (rol.getSelectedItem().toString().equals("Select")) {
 					JOptionPane.showMessageDialog(null, "Select Your Role");
@@ -108,11 +109,21 @@ public class Login_REG {
 					String ps = passw.getText();
 					String role = rol.getSelectedItem().toString();
 					new Login_REG_ctrl(un, ps, role);
-					JOptionPane.showMessageDialog(null, "Registration Successfull");
+					JOptionPane.showMessageDialog(null, "Registration Successful");
+
+					// Tutup jendela Login_REG
+					frmLoginPanel.dispose();
+
+					// Tampilkan kembali splash screen
+					// try {
+					// 	LOG_Splash.main(null);
+					// } catch (InterruptedException e) {
+					// 	e.printStackTrace();
+					// }
 				}
 			}
 		});
-		btnRegister.setBounds(180 + 410, 135, 100, 30); // Menyesuaikan dengan posisi dan ukuran tombol "Reset"
+		btnRegister.setBounds(590, 135, 100, 30); // Menyesuaikan dengan posisi dan ukuran tombol "Reset"
 		frmLoginPanel.getContentPane().add(btnRegister);
 
 		// Reset button

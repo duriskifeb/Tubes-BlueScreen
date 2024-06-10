@@ -9,8 +9,18 @@ import javax.swing.JWindow;
 import java.awt.BorderLayout;
 
 public class LOG_Splash {
-
 	public static void main(String[] args) throws InterruptedException {
+		showSplashAndRunMainApp();
+	}
+
+	public static void showSplashAndRunMainApp() throws InterruptedException {
+		showSplash();
+		// Tampilkan aplikasi utama (misal JFrame)
+		Login_Jfrm log = new Login_Jfrm();
+		log.main(null);
+	}
+
+	public static void showSplash() throws InterruptedException {
 		// Membuat splash screen kustom menggunakan JWindow
 		JWindow splash = new JWindow();
 
@@ -21,7 +31,6 @@ public class LOG_Splash {
 		JLabel splashLabel = new JLabel(new ImageIcon(LOG_Splash.class.getResource("/resource/landingpage.png")));
 		splash.setBounds(480, 250, 625, 350);
 		content.add(splashLabel, BorderLayout.CENTER);
-		
 
 		// Progress bar
 		JProgressBar progressBar = new JProgressBar();
@@ -41,10 +50,6 @@ public class LOG_Splash {
 		}
 
 		splash.setVisible(false);
-		splash.dispose();
-
-		// Tampilkan aplikasi utama (misal JFrame)
-		Login_Jfrm log = new Login_Jfrm();
-		log.main(null);
+		// splash.dispose();
 	}
 }

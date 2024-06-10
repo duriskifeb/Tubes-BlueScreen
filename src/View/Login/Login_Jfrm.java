@@ -59,14 +59,6 @@ public class Login_Jfrm extends JFrame {
         frmLoginPanel.getContentPane().setLayout(null);
         frmLoginPanel.getContentPane().setBackground(Color.orange);
 
-        // JLabel lblteks = new JLabel(
-        // "<html><center><font face='Poppins' color='white' size='6'><b>Selamat Datang
-        // di Aplikasi Traveliki🦇<br/>Kapanpun dan dimanapun bisa sakniki<br/>harga
-        // murah asal uang nya ada</b></font></center></html>");
-        // lblteks.setBounds(50, 20, 600, 80); // Perbesar bounds agar teks sesuai
-        // frmLoginPanel.getContentPane().add(lblteks);
-
-        // user = new JTextField();
 
         // tambahkan image
 

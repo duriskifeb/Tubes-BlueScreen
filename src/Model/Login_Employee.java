@@ -67,7 +67,7 @@ public class Login_Employee {
 	public void Employe_data_insert() {
 		Connection obj = Database.getconnection();
 
-		String query = "INSERT INTO `login_Manager`(`username`, `password`, `role`) VALUES (?,?,?)";
+		String query = "INSERT INTO `login_employee`(`username`, `password`, `role`) VALUES (?,?,?)";
 
 		try {
 			PreparedStatement dt = obj.prepareStatement(query);

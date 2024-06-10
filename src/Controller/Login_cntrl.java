@@ -54,10 +54,10 @@ public class Login_cntrl {
 		
 		//Admin
 		if(rol.equals("Admin")){
-			Login_Admin Login_m=new Login_Admin();
-			String result=Login_m.admin_data_chek(un, ps,rol);
+			Login_Admin Login_m = new Login_Admin();
+			String result = Login_m.admin_data_chek(un, ps,rol);
 			
-			if(result==null){
+			if(result == null){
 				System.out.println("No Admin");
 				JOptionPane.showMessageDialog(null, "Login Failed");
 				
