@@ -51,16 +51,18 @@ public class Login_Jfrm extends JFrame {
     private void initialize() {
 
         frmLoginPanel = new JFrame();
-        frmLoginPanel.setSize(889, 602); // Set ukuran menjadi 889x602
+        frmLoginPanel.setSize(890, 600); // Set ukuran menjadi 889x602
         frmLoginPanel.setType(Type.POPUP);
         frmLoginPanel.setTitle("Welcome, Traveliki🦇");
-        frmLoginPanel.setBounds(480, 250, 889, 602); // Set ukuran menjadi 889x602
+        frmLoginPanel.setBounds(480, 250, 890, 600); // Set ukuran menjadi 889x602
         frmLoginPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frmLoginPanel.getContentPane().setLayout(null);
         frmLoginPanel.getContentPane().setBackground(Color.orange);
 
         // JLabel lblteks = new JLabel(
-        //         "<html><center><font face='Poppins' color='white' size='6'><b>Selamat Datang di Aplikasi Traveliki🦇<br/>Kapanpun dan dimanapun bisa sakniki<br/>harga murah asal uang nya ada</b></font></center></html>");
+        // "<html><center><font face='Poppins' color='white' size='6'><b>Selamat Datang
+        // di Aplikasi Traveliki🦇<br/>Kapanpun dan dimanapun bisa sakniki<br/>harga
+        // murah asal uang nya ada</b></font></center></html>");
         // lblteks.setBounds(50, 20, 600, 80); // Perbesar bounds agar teks sesuai
         // frmLoginPanel.getContentPane().add(lblteks);
 
@@ -90,7 +92,6 @@ public class Login_Jfrm extends JFrame {
         frmLoginPanel.getContentPane().add(user);
         user.setColumns(10);
 
-
         JLabel lblPassword = new JLabel("Password : ");
         lblPassword.setFont(new Font("Poppins", Font.BOLD, 16)); // Perbesar teks
         lblPassword.setBounds(41, 140, 120, 30); // Tempatkan di bawah Username
@@ -101,7 +102,7 @@ public class Login_Jfrm extends JFrame {
         passw.setBounds(180, 140, 250, 30); // Tempatkan di bawah Username
         frmLoginPanel.getContentPane().add(passw);
 
-        // btnLogin
+        // Login button
         JButton btnLogin = new JButton("Login");
         btnLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -109,46 +110,45 @@ public class Login_Jfrm extends JFrame {
                     JOptionPane.showMessageDialog(null, "Select Your Role");
                 } else {
                     String un = user.getText();
-                    String ps = passw.getText();
+                    String ps = new String(passw.getPassword()); // Use getPassword() for JPasswordField
                     String role = rol.getSelectedItem().toString();
                     new Login_cntrl(un, ps, role);
                 }
             }
         });
-        btnLogin.setBounds(124, 198, 89, 25);
+        btnLogin.setBounds(180, 240, 100, 30); // Adjusted position and size
         frmLoginPanel.getContentPane().add(btnLogin);
 
-        // btnReset
+        // Reset button
         JButton btnReset = new JButton("Reset");
         btnReset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                // Membersihkan field input
+                // Clear input fields
                 user.setText("");
                 passw.setText("");
-                rol.setSelectedIndex(0); // Mengatur combo box ke pilihan default
+                rol.setSelectedIndex(0); // Reset combo box to default
             }
         });
-
-        btnReset.setBounds(250, 198, 89, 25); // Mengatur posisi tombol reset
+        btnReset.setBounds(330, 240, 100, 30); // Adjusted position and size
         frmLoginPanel.getContentPane().add(btnReset);
 
-        rol = new JComboBox();
+        // Initialize and set up the JComboBox
+        rol = new JComboBox<>();
         rol.setModel(
-                // new DefaultComboBoxModel(new String[] { "Select", "Employee", "Manager",
-                // "Admin", "Super_Admin" }));
-                new DefaultComboBoxModel(new String[] { "Select", "Employee", "Manager", "Admin", "Super_Admin" }));
+                new DefaultComboBoxModel<>(new String[] { "Select", "Employee", "Manager", "Admin", "Super_Admin" }));
+        rol.setBounds(180, 190, 250, 30); // Position below Password
+        frmLoginPanel.getContentPane().add(rol); // Add to the content pane
 
-        rol.setBounds(124, 145, 89, 20);
-        frmLoginPanel.getContentPane().add(rol);
-
+        // Initialize and set up the JLabel for Role
         JLabel lblRole = new JLabel("Role : ");
-        lblRole.setBounds(41, 148, 42, 14);
-        frmLoginPanel.getContentPane().add(lblRole);
+        lblRole.setFont(new Font("Poppins", Font.BOLD, 16)); // Match the font
+        lblRole.setBounds(41, 190, 120, 30); // Position below Password
+        frmLoginPanel.getContentPane().add(lblRole); // Add to the content pane
 
-        // Icon untuk field Username
+       // Icon untuk field Username
         JLabel lblUsernameIcon = new JLabel();
         lblUsernameIcon.setIcon(new ImageIcon(Login_Jfrm.class.getResource("/resource/Vector.png")));
-        lblUsernameIcon.setBounds(440, 90, 30, 30); // Sesuaikan posisinya
+        lblUsernameIcon.setBounds(440, 90, 50, 30); // Sesuaikan posisinya
         frmLoginPanel.getContentPane().add(lblUsernameIcon);
 
         // icon password
@@ -164,30 +164,30 @@ public class Login_Jfrm extends JFrame {
             }
         });
 
-        tglbtnNewToggleButton.setBounds(341, 135, 18, 14);
+        tglbtnNewToggleButton.setBounds(440, 140, 34, 30);
         frmLoginPanel.getContentPane().add(tglbtnNewToggleButton);
 
-        JLabel lblNotRegisterYet = new JLabel("sudah Punya akun ? ");
+        // Label for "Already have an account?"
+        JLabel lblNotRegisterYet = new JLabel("Sudah punya akun?");
         lblNotRegisterYet.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblNotRegisterYet.setBounds(124, 236, 150, 20);
+        lblNotRegisterYet.setBounds(180, 280, 150, 20); // Adjusted position
         frmLoginPanel.getContentPane().add(lblNotRegisterYet);
 
+        // Label for "Register here"
         JLabel lblRegisterHere = new JLabel("Daftar dulu sini !!!");
         lblRegisterHere.setForeground(new Color(0, 51, 153));
-        lblNotRegisterYet.setBounds(124, 236, 150, 20);
+        lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblRegisterHere.setBounds(330, 280, 150, 20); // Adjusted position with increased x-value for spacing
         lblRegisterHere.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
-                Login_REG Login_REG = new Login_REG();
-                Login_REG.main(null);
+                Login_REG loginReg = new Login_REG();
+                loginReg.main(null);
             }
-
         });
-        lblRegisterHere.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblRegisterHere.setBounds(295, 236, 150, 20); // Meningkatkan nilai x untuk menambah jarak
         frmLoginPanel.getContentPane().add(lblRegisterHere);
 
-        JLabel lblImageBottom2 = new JLabel(new ImageIcon(Login_Jfrm.class.getResource("/resource/All.png")));
+        JLabel lblImageBottom2 = new JLabel(new ImageIcon(Login_Jfrm.class.getResource("/resource/RevDone.png")));
         lblImageBottom2.setBounds(0, 0, 889, 602); // Atur ukuran dan posisi sesuai kebutuhan
         frmLoginPanel.getContentPane().add(lblImageBottom2);
 
