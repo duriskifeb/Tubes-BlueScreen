@@ -190,16 +190,19 @@ public class Dashboard_JFrm extends JFrame {
 		// cut
 		mnBillingInfo.add(mntmCreateCashMemo);
 
+		// Log-out
+		Logout = new JMenu("Log-out");
+		Logout.setLocation(new Point(43, 100));
+		Logout.setIcon(new ImageIcon(Dashboard_JFrm.class.getResource("/resource/sp (12).png")));
+		Logout.add(Logout);
+
+
 		mnExtra = new JMenu("Extra");
 		mnExtra.setLocation(new Point(43, 100));
 		menuBar.add(mnExtra);
 
 		
-		// Log-out
-		mnExtra = new JMenu("Log-out");
-		mnExtra.setLocation(new Point(43, 100));
-		menuBar.add(Logout);
-		
+
 		// cut
 		mnBackupRestore = new JMenu("Backup");
 		mnExtra.add(mnBackupRestore);
