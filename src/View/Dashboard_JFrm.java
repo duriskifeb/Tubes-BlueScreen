@@ -64,6 +64,7 @@ public class Dashboard_JFrm extends JFrame {
 	private JMenuItem mntmCreateCashMemo;
 	private JMenuItem mntmP;
 	private JMenu mnExtra;
+	private JMenu Logout;
 	private JMenu mnBackupRestore;
 	private JMenuItem mntmBackupData;
 	private JMenuItem mntmRestoreData;
@@ -191,11 +192,14 @@ public class Dashboard_JFrm extends JFrame {
 
 		mnExtra = new JMenu("Extra");
 		mnExtra.setLocation(new Point(43, 100));
-
 		menuBar.add(mnExtra);
 
+		
 		// Log-out
-		// TODO log-out
+		mnExtra = new JMenu("Log-out");
+		mnExtra.setLocation(new Point(43, 100));
+		menuBar.add(Logout);
+		
 		// cut
 		mnBackupRestore = new JMenu("Backup");
 		mnExtra.add(mnBackupRestore);
