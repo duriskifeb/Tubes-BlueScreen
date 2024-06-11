@@ -62,7 +62,7 @@ public class Login_REG {
 			public void keyReleased(KeyEvent arg0) {
 				String usr = user.getText();
 				String ad = Login_Admin.username_exist_admin(usr);
-				String em = Login_Employee.username_exist_employee(usr);
+				String em = Login_Employee.username_exist_emp(usr);
 				String mng = Login_Manager.username_exist_mngr(usr);
 
 				if (ad == null && em == null && mng == null) {
