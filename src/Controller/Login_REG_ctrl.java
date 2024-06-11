@@ -12,15 +12,15 @@ public class Login_REG_ctrl {
 	public Login_REG_ctrl(String un, String ps, String rol) {
 		// Employee
 		if (rol.equals("Employee")) {
-			Login_Employee.employee_data_chek(un, ps, rol);
-			Login_Employee.employee_data_chek(un, ps, rol);
+			Login_Employee.emp_data_chek(un, ps, rol);
+			Login_Employee.emp_data_chek(un, ps, rol);
 		}
 
 		// MAnager
 		if (rol.equals("Manager")) {
-			Login_Manager loginManager = new Login_Manager();
-			loginManager.prepare_Manager_data(un, ps, rol);
-			loginManager.manager_data_insert();
+			Login_Manager loginAdmin = new Login_Manager();
+			loginAdmin.prepare_Manager_data(un, ps, rol);
+			loginAdmin.manager_data_insert();
 
 		}
 

@@ -4,16 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class Login_Employee {
+public class Login_Employe {
 	private String user;
 	private String pss;
 	private String rl;
 
-	public static String employee_data_chek(String give_username, String give_password, String give_rol) {
+	public static String admin_data_chek(String give_username, String give_password, String give_rol) {
 
 		Connection obj = Database.getconnection();
 
-		String comnd = "SELECT `username`, `password` FROM `login_employee` WHERE username=? AND password=? AND role=?";
+		String comnd = "SELECT `username`, `password` FROM `login_admin` WHERE username=? AND password=? AND role=?";
 
 		String user = null;
 		String pass;
@@ -39,17 +39,17 @@ public class Login_Employee {
 		return user;
 	}
 
-	public void prepare_employee_data(String give_username, String give_password, String give_rol) {
+	public void prepare_admin_data(String give_username, String give_password, String give_rol) {
 
 		this.user = give_username;
 		this.pss = give_password;
 		this.rl = give_rol;
 	}
 
-	public void employee_data_insert() {
+	public void admin_data_insert() {
 		Connection obj = Database.getconnection();
 
-		String comnd = "INSERT INTO `login_employee`(`username`, `password`, `role`) VALUES (?,?,?)";
+		String comnd = "INSERT INTO `login_admin`(`username`, `password`, `role`) VALUES (?,?,?)";
 
 		try {
 			PreparedStatement ps = obj.prepareStatement(comnd);
@@ -63,10 +63,10 @@ public class Login_Employee {
 
 	}
 
-	public static String username_exist_employee(String give_username) {
+	public static String username_exist_admin(String give_username) {
 		Connection obj = Database.getconnection();
 
-		String comnd = "SELECT username FROM login_employee WHERE username=?";
+		String comnd = "SELECT username FROM login_admin WHERE username=?";
 
 		String user = null;
 
