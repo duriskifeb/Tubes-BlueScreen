@@ -13,13 +13,13 @@ public class Login_Admin {
 		
 		Connection obj=Database.getconnection();
 		
-		String comnd="SELECT `username`, `password` FROM `login_admin` WHERE username=? AND password=? AND role=?";
+		String comnd = "SELECT `username`, `password` FROM `login_admin` WHERE username=? AND password=? AND role=?";
 		
 		String user = null;
 		String pass;
 		
 		try{
-			PreparedStatement ps=obj.prepareStatement(comnd);
+			PreparedStatement ps = obj.prepareStatement(comnd);
 			ps.setString(1,give_username);
 			ps.setString(2,give_password);
 			ps.setString(3,give_rol);
@@ -93,5 +93,4 @@ public class Login_Admin {
 		return user;
 	}
 	
-
 }

@@ -15,7 +15,7 @@ public class Login_cntrl {
 		//Employee
 		if(rol.equals("Employee")){
 			Login_Employee Login_m=new Login_Employee();
-			String result=Login_m.emp_data_chek(un, ps,rol);
+			String result=Login_m.employee_data_chek(un, ps,rol);
 			
 			if(result == null){
 				System.out.println("No Employee");

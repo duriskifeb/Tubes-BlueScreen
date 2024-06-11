@@ -76,7 +76,6 @@ public class Dashboard_JFrm extends JFrame {
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-
 				try {
 
 					UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());
@@ -110,6 +109,7 @@ public class Dashboard_JFrm extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
+		// sebagai admin
 		if (role.equals("Admin")) {
 			mnHome = new JMenu("Home");
 			mnHome.setIcon(new ImageIcon(Dashboard_JFrm.class.getResource("/resource/home (2).png")));

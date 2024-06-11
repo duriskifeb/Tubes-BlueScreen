@@ -62,7 +62,7 @@ public class Login_REG {
 			public void keyReleased(KeyEvent arg0) {
 				String usr = user.getText();
 				String ad = Login_Admin.username_exist_admin(usr);
-				String em = Login_Employee.username_exist_emp(usr);
+				String em = Login_Employee.username_exist_employee(usr);
 				String mng = Login_Manager.username_exist_mngr(usr);
 
 				if (ad == null && em == null && mng == null) {
@@ -116,9 +116,9 @@ public class Login_REG {
 
 					// Tampilkan kembali splash screen
 					// try {
-					// 	LOG_Splash.main(null);
+					// LOG_Splash.main(null);
 					// } catch (InterruptedException e) {
-					// 	e.printStackTrace();
+					// e.printStackTrace();
 					// }
 				}
 			}
@@ -151,7 +151,7 @@ public class Login_REG {
 		lblRole.setFont(new Font("Poppins", Font.BOLD, 16)); // Match the font
 		lblRole.setBounds(41 + 447, 84, 120, 30); // Position below Password
 		frmLoginPanel.getContentPane().add(lblRole); // Add to the content pane
-		
+
 		user_lbl = new JLabel("Username Already Exist !!!");
 		user_lbl.setForeground(new Color(255, 0, 0));
 		user_lbl.setVisible(false);
@@ -163,4 +163,3 @@ public class Login_REG {
 		frmLoginPanel.getContentPane().add(lblImageBottom2);
 	}
 }
-
