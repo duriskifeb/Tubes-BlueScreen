@@ -53,3 +53,6 @@ public class LOG_Splash {
 		// splash.dispose();
 	}
 }
+
+
+// kok gatel
