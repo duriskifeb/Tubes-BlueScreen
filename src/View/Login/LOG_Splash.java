@@ -31,7 +31,7 @@ public class LOG_Splash {
 		JLabel splashLabel = new JLabel(new ImageIcon(LOG_Splash.class.getResource("/resource/landingpage.png")));
 		splash.setBounds(480, 250, 625, 350);
 		content.add(splashLabel, BorderLayout.CENTER);
-
+		
 		// Progress bar
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setForeground(Color.GREEN); // Warna progress bar

@@ -232,6 +232,7 @@ public class Dashboard_JFrm extends JFrame {
 			});
 			mnBillingInfo.add(mntmP);
 		}
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -242,7 +243,7 @@ public class Dashboard_JFrm extends JFrame {
 			{
 				try {
 					// URL
-					image = ImageIO.read(LOG_Splash.class.getResource("/resource/dash.jpg"));
+					image = ImageIO.read(LOG_Splash.class.getResource("/resource/dash1.png")); //ini background
 					// image = ImageIO.read(new
 					// URL("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/396567/1160/772/m1/fpnw/wm0/flat_vector_shop-01-.jpg?1426020217&s=3550b21a0ae6ce4120676f9069322f63"));
 				} catch (IOException e) {
